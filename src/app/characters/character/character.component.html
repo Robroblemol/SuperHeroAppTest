@@ -6,10 +6,8 @@
   {{character.name}}
   </mat-card-title> 
   <mat-card-footer>
-      <a href="{{character.image.url}}" target="_blank" 
-      fxFlex mat-flat-button color="primary">
-      Details
-    </a>
-    <button mat-raised-button (click)="openDialog()">Pick one</button>
+    <button mat-raised-button (click)="openDialog()"
+      fxFlex mat-flat-button color="primary"> 
+        Details</button>
   </mat-card-footer>
 </mat-card>

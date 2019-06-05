@@ -2,7 +2,11 @@ export default interface Character {
     id: number;
     name: string;
     powerstats: {};
-    biography:{};
+    biography:{
+        fullName: string,
+        alter_egos: string,
+        aliases:[],
+    };
     appearance:{};
     work:{};
     connections:{};
