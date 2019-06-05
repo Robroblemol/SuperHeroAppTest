@@ -1,0 +1,13 @@
+<div fxFlex fxLayuot = "coloumn">
+  <div fxLayout="row wrap">
+    <div fxFlex="25" 
+         fxFlex.md="33"
+         fxFlex.sm="50" 
+         fxFlex.xs="100"
+         fxLayout="coloumn" 
+         style="padding:5px;"
+         *ngFor="let character of allCharacters | async">
+        <app-character [character]="character"></app-character>
+    </div>
+  </div> 
+</div>
