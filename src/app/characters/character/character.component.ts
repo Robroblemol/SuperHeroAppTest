@@ -23,6 +23,10 @@ export class CharacterComponent{
     dialogConfig.data = {
       name: this.character.name,
       biography: this.character.biography,
+      appearance:this.character.appearance,
+      work: this.character.work,
+      connections: this.character.connections,
+      
       //title: 'Angular For Beginners',
   };
  

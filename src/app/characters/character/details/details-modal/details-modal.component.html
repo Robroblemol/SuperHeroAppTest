@@ -1,7 +1,41 @@
 <div>
   <h2 mat-dialog-title>{{name}}</h2>
   <mat-dialog-content>
-  <h3>Full name: {{biography.publishe}}</h3>
+      <mat-tab-group>
+          <mat-tab label="Biography">
+              <p>Full name: {{biography["full-name"]}}</p>
+              <p>Alter ego: {{biography["alter-egos"]}}</p>
+              <p> Aliases: </p>
+              <ul *ngFor="let alias of aliases">
+                <li>
+                  {{alias}} 
+                </li>
+              </ul>
+              <p>Place of birth: {{biography["place-of-birth"]}}</p>
+              <p>First apperance: {{biography["first-appearance"]}}</p>
+              <p>Publisher: {{biography.publisher}}</p>
+              <p>Alignment: {{biography.alignment}}</p>
+              
+          </mat-tab>a
+          <mat-tab label="Appearance">
+            <p>Gender: {{appearance.gender}}</p>
+            <p>Race: {{appearance.race}}</p>
+            <p>Height: {{appearance.height[1]}}</p>
+            <p>Weight: {{appearance.weight[1]}}</p>
+            <p>Eyes color: {{appearance["eye-color"]}}</p>
+            <p>Hair-color: {{appearance["hair-color"]}}</p>
+          </mat-tab>
+          <mat-tab label="Work">
+            <p>Occupation: {{work.occupation}} </p>
+            <p>Base: {{work.base}} </p>
+          </mat-tab>
+          <mat-tab label="Connections">
+            <p>Gruop affiliation: {{connections["group-affiliation"]}} </p>
+            <p>relatives: {{connections.relatives}} </p>
+          </mat-tab>
+      </mat-tab-group>
+    
+
     
   
   </mat-dialog-content>

@@ -3,6 +3,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 
 
 
+
 @Component({
   selector: 'app-details-modal',
   templateUrl: './details-modal.component.html',
@@ -12,6 +13,12 @@ export class DetailsModalComponent implements OnInit {
   
   name: string;
   biography: {};
+  aliases:[];
+  appearance:{};
+  work:{};
+  connections: {};
+
+  
 
   constructor(
     //private fb: FormBuilder,
@@ -20,6 +27,10 @@ export class DetailsModalComponent implements OnInit {
 
     this.name = data.name;
     this.biography=data.biography;
+    this.aliases=data.aliases;
+    this.appearance=data.appearance;  
+    this.work=data.work;
+    this.connections=data.connections;
 }
 
 
