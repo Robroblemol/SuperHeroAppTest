@@ -1,4 +1,21 @@
+
 <div fxFlex fxLayuot = "coloumn">
+    <div>
+    
+        <mat-form-field >
+            <input matInput 
+              placeholder="Search Hero"
+              name="search"
+              #seach
+              >
+            </mat-form-field>
+            <button mat-raised-button 
+            (click)="searchHero(seach.value)"
+            color="primary"
+            
+            >Search</button>
+          
+    </div>
   <div fxLayout="row wrap">
     <div fxFlex="25" 
          fxFlex.md="33"

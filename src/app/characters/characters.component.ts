@@ -12,7 +12,7 @@ import { Characters } from "../models/characters.model";
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent implements OnInit {
-
+  
   constructor(private  characterSvc: CharactersApiService) { }
   allCharacters : Observable<Characters>;
 
@@ -22,5 +22,10 @@ export class CharactersComponent implements OnInit {
 
   getCharacters(){
     this.allCharacters = this.characterSvc.getByName();
+  }
+  searchHero(search:string){
+    console.log(`pressed! ${search}`);
+    this.allCharacters = this.characterSvc.searchHero(search);
+
   }
 }

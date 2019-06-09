@@ -12,11 +12,19 @@ export class CharactersApiService {
   PUBLIC_KEY = '10214891365899950';
   HASH='search/ab';
   URL_API=`/api/${this.PUBLIC_KEY}/${this.HASH}`;
+  URL_index=``;
+
   constructor(private http:HttpClient) { }
 
   getByName () : Observable <Characters>{
     return this.http.get <Characters> (this.URL_API)
       .pipe(map((data: any): Characters  => data.results))
+  }
+
+  searchHero(index:string):Observable <Characters>{
+    this.URL_index=`/api/${this.PUBLIC_KEY}/search/${index}`;
+    return this.http.get<Characters>(this.URL_index)
+    .pipe(map((data: any):Characters => data.results))
   }
   
 }
