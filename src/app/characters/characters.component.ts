@@ -15,6 +15,7 @@ export class CharactersComponent implements OnInit {
   
   constructor(private  characterSvc: CharactersApiService) { }
   allCharacters : Observable<Characters>;
+  showSpiner : boolean = true;
 
   ngOnInit() {
     this.getCharacters();
@@ -22,10 +23,11 @@ export class CharactersComponent implements OnInit {
 
   getCharacters(){
     this.allCharacters = this.characterSvc.getByName();
+    this.allCharacters.subscribe(()=>this.showSpiner=false);
   }
   searchHero(search:string){
-    console.log(`pressed! ${search}`);
+    this.showSpiner = true;
     this.allCharacters = this.characterSvc.searchHero(search);
-
+    this.allCharacters.subscribe(()=>this.showSpiner=false);
   }
 }
