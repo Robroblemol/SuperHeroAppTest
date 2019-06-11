@@ -1,29 +1,34 @@
 
 <div fxFlex fxLayuot = "coloumn">
-    <div>
+    <div >
     
-        <mat-form-field >
-            <input matInput 
+        <mat-form-field class="full-width">
+            <input class="search-field"
+              matInput 
               placeholder="Search Hero"
               name="search"
-              #seach
+              #seach    
+              size="100%"
               >
             </mat-form-field>
-            <button mat-raised-button 
+            <button 
+            mat-raised-button 
             (click)="searchHero(seach.value)"
             color="primary"
-            
             >Search</button>
-          
     </div>
-    <mat-spinner *ngIf="showSpiner"></mat-spinner>
-  <div fxLayout="row wrap">
-    <div fxFlex="25" 
+    <div *ngIf="showSpiner">
+      <mat-spinner class="spinner" 
+      ></mat-spinner>
+
+    </div>      
+    <div fxLayout="row wrap">
+    <div class="contents-charaters"
+         fxFlex="25" 
          fxFlex.md="33"
          fxFlex.sm="50" 
          fxFlex.xs="100"
          fxLayout="coloumn" 
-         style="padding:5px;"
          *ngFor="let character of allCharacters | async">
         <app-character [character]="character"></app-character>
     </div>
