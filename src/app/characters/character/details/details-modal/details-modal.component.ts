@@ -21,13 +21,13 @@ export class DetailsModalComponent implements OnInit {
   
 
   constructor(
-    //private fb: FormBuilder,
+  
     private dialogRef: MatDialogRef<DetailsModalComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
 
     this.name = data.name;
     this.biography=data.biography;
-    this.aliases=data.aliases;
+    this.aliases=data.biography.aliases;
     this.appearance=data.appearance;  
     this.work=data.work;
     this.connections=data.connections;
