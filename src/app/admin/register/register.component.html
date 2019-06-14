@@ -2,10 +2,10 @@
   <div>
     <mat-card class="login-card">
       <mat-card-title>
-        Log in!
+        Register!
       </mat-card-title>
       <mat-card-content>
-        <p> Log in with email</p> 
+        <p>Register with email</p> 
         <form class="example-form">
         <mat-form-field class="example-full-width">
           <input matInput 
@@ -23,11 +23,8 @@
       <mat-card-actions>
           <button 
             mat-raised-button color="primary"
-            (click)="authService.signIn(email.value,password.value)">
-            log in</button>
-          <a  
-            color="secundary"
-            routerLink="/register"> Register</a>
+            (click)="authService.SignUp(email.value,password.value)">
+            Register</button>
       </mat-card-actions>
     </mat-card>
 

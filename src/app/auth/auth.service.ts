@@ -36,14 +36,17 @@ logged in and setting up null when logged out */
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
       }
       return userRef.set(userData, {
       merge: true
       })
       }
 
-
+    get isLoggedIn(): boolean {
+        const user = JSON.parse(localStorage.getItem('user'));
+        return (user !== null && user.emailVerified === false) ? true : false;
+        }
     async signIn(email, password) {
       //console.log(`email: ${email} pass: ${password}`);
       
@@ -73,6 +76,13 @@ logged in and setting up null when logged out */
   }
   async SendVerificationMail() {
     await this.afAuth.auth.currentUser.sendEmailVerification();
-    this.router.navigate(['verify-email-address']);
+    this.router.navigate(['login']);
     }
+    logOut(){
+      return this.afAuth.auth.signOut().then(() => {
+        localStorage.removeItem('user');
+        this.router.navigate(['login']);
+        })
+    }
+    
   }

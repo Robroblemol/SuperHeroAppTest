@@ -6,8 +6,6 @@ import { Characters } from "../models/characters.model";
 
 
 
-
-
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
