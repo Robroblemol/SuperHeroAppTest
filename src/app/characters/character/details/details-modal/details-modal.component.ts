@@ -32,7 +32,7 @@ export class DetailsModalComponent implements OnInit {
     this.work=data.work;
     this.connections=data.connections;
 }
-
+    
 
   ngOnInit() {
   }

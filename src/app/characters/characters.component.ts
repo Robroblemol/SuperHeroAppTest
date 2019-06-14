@@ -6,6 +6,8 @@ import { Characters } from "../models/characters.model";
 
 
 
+
+
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
@@ -13,12 +15,14 @@ import { Characters } from "../models/characters.model";
 })
 export class CharactersComponent implements OnInit {
   
-  constructor(private  characterSvc: CharactersApiService) { }
   allCharacters : Observable<Characters>;
   showSpiner : boolean = true;
 
+  constructor(private  characterSvc: CharactersApiService) {}
+
   ngOnInit() {
     this.getCharacters();
+  
   }
 
   getCharacters(){

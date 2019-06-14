@@ -9,14 +9,18 @@
               name="search"
               #seach    
               size="100%"
+              formControlName="searchHero"
+              required
               >
             </mat-form-field>
             <button 
+            type="submit"
             mat-raised-button 
             (click)="searchHero(seach.value)"
             color="primary"
+            
             >Search</button>
-    </div>
+          </div>
     <div *ngIf="showSpiner">
       <mat-spinner class="spinner" 
       ></mat-spinner>
