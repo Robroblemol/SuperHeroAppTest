@@ -20,12 +20,13 @@ export class LoginComponent implements OnInit {
           Validators.pattern(this.emailPattern),
           Validators.minLength(5),
         ]
-        ),
+      ),
       password: new FormControl('',
         [
           Validators.required,
           Validators.minLength(5),
-        ]),
+        ]
+        ),
     }
   );
 
