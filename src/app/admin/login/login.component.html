@@ -6,26 +6,60 @@
       </mat-card-title>
       <mat-card-content>
         <p> Log in with email</p> 
-        <form [formGroup] = "loginFrom">
+        <form [formGroup] = "loginForm"
+        (ngSubmit)="signIn()">
+            <div class="alert-danger"
+                *ngIf="email.invalid && 
+                  (email.dirty || email-touched)">
+                <div class="contanier-error-message"
+                *ngIf="email.errors.required">
+                  Email is required
+                </div>
+                <div class="contanier-error-message"
+                *ngIf="email.errors.minlength">
+                  Email could be at least 4 characters long
+                </div>
+                <div class="contanier-error-message"
+                *ngIf="(email.dirty || email.touched) &&
+                  email.invalid 
+                  && email.errors.pattern">
+                  Value has to be a valid email address.
+                </div>
+            </div>
+
         <mat-form-field class="example-full-width">
           <input matInput 
-            formControlEmail = "email"
-            placeholder="email" 
-            #email>
+            formControlName = "email"
+            placeholder="Email" 
+          >
         </mat-form-field>
+
+        <div class="alert-danger"
+          *ngIf="password.invalid && 
+            (password.dirty || password-touched)">
+          <div class="contanier-error-message"
+          *ngIf="password.errors.required">
+            password is required
+          </div>
+          <div class="contanier-error-message"
+          *ngIf="password.errors.minlength">
+            password could be at least 4 characters long
+          </div>
+        </div>
+        
         <mat-form-field class="example-full-width">
           <input matInput
-            formControlEmail = "password"
             type="password"
-             placeholder="password" 
-             #password >
+            formControlName = "password"
+             placeholder="Password" 
+            >
         </mat-form-field>
         </form>
       </mat-card-content>
       <mat-card-actions>
           <button 
             mat-raised-button color="primary"
-            (click)="authService.signIn(email.value,password.value)">
+            (click)="signIn()">
             log in</button>
           <a  
             color="secundary"
