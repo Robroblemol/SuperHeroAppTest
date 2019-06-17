@@ -6,17 +6,19 @@
       </mat-card-title>
       <mat-card-content>
         <p> Log in with email</p> 
-        <form class="example-form">
+        <form [formGroup] = "loginFrom">
         <mat-form-field class="example-full-width">
           <input matInput 
+            formControlEmail = "email"
             placeholder="email" 
             #email>
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <input matInput
+            formControlEmail = "password"
             type="password"
              placeholder="password" 
-             #password>
+             #password >
         </mat-form-field>
         </form>
       </mat-card-content>

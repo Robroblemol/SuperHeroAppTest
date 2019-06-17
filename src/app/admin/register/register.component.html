@@ -6,7 +6,7 @@
       </mat-card-title>
       <mat-card-content>
         <p>Register with email</p> 
-        <form class="example-form">
+        <form [formGroup] = "registerFrom">
         <mat-form-field class="example-full-width">
           <input matInput 
             placeholder="email" 

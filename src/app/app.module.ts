@@ -20,6 +20,10 @@ import {
    MatProgressSpinnerModule,
    } from '@angular/material';
 
+   import { AngularFireAuthModule } from '@angular/fire/auth';
+   import { AngularFireModule } from '@angular/fire';   
+   import { AngularFirestore } from '@angular/fire/firestore';
+   import { ReactiveFormsModule } from '@angular/forms'
    import { CharacterComponent } from './characters/character/character.component';
    import { CharactersComponent } from './characters/characters.component';
    import { DetailsModalComponent } from './characters/character/details/details-modal/details-modal.component'
@@ -28,9 +32,6 @@ import {
    import { FlexLayoutModule } from '@angular/flex-layout';
    import { LoginComponent } from './admin/login/login.component';
    import { firebaseConfig } from './auth/configFirebase';
-   import { AngularFireAuthModule } from '@angular/fire/auth';
-   import { AngularFireModule } from '@angular/fire';   
-   import { AngularFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import {
     FlexLayoutModule,
     AngularFireModule.initializeApp(firebaseConfig.firebaseConfig),
     AngularFireAuthModule,
+    ReactiveFormsModule,
 
 
   ],

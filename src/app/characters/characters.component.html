@@ -1,26 +1,37 @@
 
 <div fxFlex fxLayuot = "coloumn">
     <div >
-    
-        <mat-form-field class="full-width">
-            <input class="search-field"
+      <div class="alert-danger"
+          *ngIf="search.invalid && (search.dirty || search-touched)">
+          <div class="contanier-error-message"
+          *ngIf="search.errors.required">
+            search can't be null
+          </div>
+          <div class="contanier-error-message"
+          *ngIf="search.errors.minlength">
+            search could be at least 4 characters long
+          </div>
+      </div>
+      <mat-form-field 
+      [formGroup] ="searchForm" 
+      class="full-width"
+      (ngSubmit)="seachHero()">
+      <input
               matInput 
-              placeholder="Search Hero"
-              name="search"
-              #seach    
+              placeholder="Search Hero"   
               size="100%"
-              formControlName="searchHero"
+              formControlName="search"
               required
               >
             </mat-form-field>
             <button 
             type="submit"
             mat-raised-button 
-            (click)="searchHero(seach.value)"
+            (click)="searchHero()"
             color="primary"
             
             >Search</button>
-          </div>
+          </div >
     <div *ngIf="showSpiner">
       <mat-spinner class="spinner" 
       ></mat-spinner>
