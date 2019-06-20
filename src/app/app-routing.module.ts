@@ -20,11 +20,12 @@ const routes: Routes = [
   {
     path:'login',
     component:LoginComponent,
-    //canActivate:[SecureInnerPagesGuard],
+    canActivate:[SecureInnerPagesGuard],
   },
   {
     path:'register',
     component:RegisterComponent,
+    canActivate:[SecureInnerPagesGuard],
   },
 ];
 

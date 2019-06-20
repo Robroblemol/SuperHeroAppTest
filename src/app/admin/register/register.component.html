@@ -57,7 +57,8 @@
       <mat-card-actions>
           <button 
             mat-raised-button color="primary"
-            (click)="signUp()">
+            (click)="signUp()"
+            [disabled] = "!registerForm.valid">
             Register</button>
       </mat-card-actions>
     </mat-card>

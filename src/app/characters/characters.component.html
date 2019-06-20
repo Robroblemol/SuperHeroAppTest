@@ -26,7 +26,8 @@
             </mat-form-field>
             <button 
             type="submit"
-            mat-raised-button 
+            mat-raised-button
+            [disabled] = "!searchForm.valid" 
             (click)="searchHero()"
             color="primary"
             

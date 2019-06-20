@@ -59,7 +59,7 @@
       <mat-card-actions>
           <button 
             mat-raised-button color="primary"
-            (click)="signIn()">
+            (click)="signIn()" [disabled] = "!loginForm.valid">
             log in</button>
           <a  
             color="secundary"
