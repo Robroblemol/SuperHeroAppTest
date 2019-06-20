@@ -79,6 +79,8 @@ export class Auth {
     this.router.navigate(['login']);
     }
     logOut(){
+      console.log("logout!");
+      
       return this.afAuth.auth.signOut().then(() => {
         localStorage.removeItem('user');
         this.router.navigate(['login']);
