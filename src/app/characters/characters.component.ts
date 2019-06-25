@@ -15,6 +15,7 @@ export class CharactersComponent implements OnInit {
   
   allCharacters : Observable<Characters>;
   showSpiner : boolean = true;
+  succefull: boolean = false;
 
   searchForm = new FormGroup(
     {
@@ -39,9 +40,11 @@ export class CharactersComponent implements OnInit {
     if(this.searchForm.valid){
       console.log('a buscar: ',this.searchForm.value.search);
       this.showSpiner = true;
-      this.allCharacters = this.characterSvc.searchHero(this.searchForm.value.search);
+      this.allCharacters = 
+        this.characterSvc.
+        searchHero(this.searchForm.value.search);
       this.allCharacters.subscribe(()=>this.showSpiner=false);
-      this.onResetForm();
+      this.onResetForm();  
     }else{
       console.log("no pasé la validación");
       

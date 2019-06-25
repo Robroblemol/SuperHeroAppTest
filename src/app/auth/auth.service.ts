@@ -45,7 +45,7 @@ export class Auth {
 
     get isLoggedIn(): boolean {
         const user = JSON.parse(localStorage.getItem('user'));
-        return (user !== null) ? true : false;
+        return (user !== null && user.emailVerified) ? true : false;
         }
     async signIn(email, password) {
       //console.log(`email: ${email} pass: ${password}`);

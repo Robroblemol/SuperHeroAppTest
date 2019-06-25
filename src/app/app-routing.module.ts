@@ -5,6 +5,7 @@ import { LoginComponent } from './admin/login/login.component'
 import { AuthGuard } from './auth/guard/auth.guard';
 import { SecureInnerPagesGuard } from './auth/guard/secure-inner-pages.guard';
 import { RegisterComponent } from './admin/register/register.component';
+import { FavoritesComponent } from './favorites/favorites/favorites.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
   {
     path:'characters',
     component:CharactersComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path:'favorites',
+    component:FavoritesComponent,
     canActivate: [AuthGuard],
   },
   {
