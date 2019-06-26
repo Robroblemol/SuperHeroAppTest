@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FavoritesService } from '../service/favorites.service';
-import { Favorite } from '../models/favorite';
 import { Observable } from 'rxjs';
+import Character from 'src/app/models/character.model';
 
 @Component({
   selector: 'app-favorites',
@@ -9,7 +9,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./favorites.component.css']
 })
 export class FavoritesComponent implements OnInit {
-  AllFavorites: Favorite[];
+  AllFavorites: Character[];
+  
+
   constructor(private favoritesSvc: FavoritesService) { }
 
   ngOnInit() {
@@ -18,12 +20,15 @@ export class FavoritesComponent implements OnInit {
   getFavorites(){
     this.favoritesSvc.
       getFavotites().subscribe( favorites => {
-        this.AllFavorites = favorites;
+        this.AllFavorites = favorites ;
         console.log('AllFavorites',this.AllFavorites);
       }
     );
     
     return this.AllFavorites;
+  }
+  saveFavoriteHero(hero:Character){
+    this.favoritesSvc.saveFavoriteHero(hero);
   }
 
 }

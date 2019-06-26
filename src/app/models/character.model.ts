@@ -1,5 +1,5 @@
 export default interface Character {
-    id: number;
+    id: string;
     name: string;
     powerstats: {};
     biography:{
