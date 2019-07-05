@@ -4,7 +4,8 @@ import { AngularFirestore,
          AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
-import Character from 'src/app/models/character.model';
+import { Character } from 'src/app/models/character.model';
+import { Auth } from 'src/app/auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class FavoritesService {
   favorites: Observable<Character[]> ;
   favotitesDoc: AngularFirestoreDocument<Character>;
   
-  constructor(public afs: AngularFirestore) {
-    this.favorites = afs.collection<Character>('favoritos').valueChanges();
+  constructor(public afs: AngularFirestore, public auth: Auth) {
+    this.favorites = afs.collection<Character>(this.auth.getEmail()).valueChanges();
    }
    getFavotites(){
      console.log("favorites", this.favorites);
@@ -27,7 +28,7 @@ export class FavoritesService {
     
     return new Promise<any>((resolve, reject) =>{
       this.afs
-          .collection('favoritos')
+          .collection(this.auth.getEmail())
           .add(hero)
           .then(res => {console.log("saved");}, err => reject(err));
   });

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CharactersApiService } from './character/shared/characters-api.service';
 import { Observable } from 'rxjs';
 import { Characters } from "../models/characters.model";
-import { FormControl, FormGroup, Form, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 

@@ -1,4 +1,22 @@
-<div>
+<div fxFlex fxLayuot = "coloumn">
   <p>test add hero</p>
   <button (click)=" saveFavoriteHero()"> favorite</button>
+  
+  <div *ngIf="showSpiner">
+    <mat-spinner class="spinner" 
+    ></mat-spinner>
+
+  </div>  
+
+  <div fxLayout="row wrap">
+    <div class="contents-charaters"
+         fxFlex="25" 
+         fxFlex.md="33"
+         fxFlex.sm="50" 
+         fxFlex.xs="100"
+         fxLayout="coloumn" 
+         *ngFor="let character of allFavorites">
+        <app-character [character]="character"></app-character>
+    </div>
+  </div> 
 </div>

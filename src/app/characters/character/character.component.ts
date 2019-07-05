@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {MatDialog, MatDialogConfig} from "@angular/material";
 import { DetailsModalComponent } from './details/details-modal/details-modal.component';
-import Character from 'src/app/models/character.model';
+import { Character } from 'src/app/models/character.model';
 
 @Component({
   selector: 'app-character',

@@ -47,6 +47,10 @@ export class Auth {
         const user = JSON.parse(localStorage.getItem('user'));
         return (user !== null && user.emailVerified) ? true : false;
         }
+    getEmail(){
+      const user = JSON.parse(localStorage.getItem('user'));
+      return user.email;
+    }
     async signIn(email, password) {
       //console.log(`email: ${email} pass: ${password}`);
       
