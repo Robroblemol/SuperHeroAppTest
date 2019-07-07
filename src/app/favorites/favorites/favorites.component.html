@@ -1,7 +1,4 @@
 <div fxFlex fxLayuot = "coloumn">
-  <p>test add hero</p>
-  <button (click)=" saveFavoriteHero()"> favorite</button>
-  
   <div *ngIf="showSpiner">
     <mat-spinner class="spinner" 
     ></mat-spinner>
@@ -16,7 +13,8 @@
          fxFlex.xs="100"
          fxLayout="coloumn" 
          *ngFor="let character of allFavorites">
-        <app-character [character]="character"></app-character>
+        <app-character [character]="character"
+></app-character>
     </div>
   </div> 
 </div>

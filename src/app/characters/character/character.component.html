@@ -4,6 +4,14 @@
     alt="{{character.name}}"/>
   <mat-card-title>
   {{character.name}}
+  <button mat-icon-button (click)=saveCharacter()>
+    <mat-icon 
+      aria-hidden="false" 
+      [style.color] ="isFavorite() ? 'red' : ''"
+      aria-label="Example home icon">
+      favorite</mat-icon>
+    
+  </button>
   </mat-card-title> 
   <mat-card-footer>
     <button mat-raised-button (click)="openDialog()"

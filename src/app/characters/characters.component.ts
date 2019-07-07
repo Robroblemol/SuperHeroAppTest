@@ -3,7 +3,8 @@ import { CharactersApiService } from './character/shared/characters-api.service'
 import { Observable } from 'rxjs';
 import { Characters } from "../models/characters.model";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { FavoritesService } from '../favorites/service/favorites.service';
+import { Character } from '../models/character.model';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class CharactersComponent implements OnInit {
   
   allCharacters : Observable<Characters>;
   showSpiner : boolean = true;
-  succefull: boolean = false;
+
 
   searchForm = new FormGroup(
     {
@@ -28,8 +29,7 @@ export class CharactersComponent implements OnInit {
   constructor(private  characterSvc: CharactersApiService) {}
 
   ngOnInit() {
-    this.getCharacters();
-  
+    this.getCharacters();   
   }
 
   getCharacters(){
