@@ -4,7 +4,8 @@
     alt="{{character.name}}"/>
   <mat-card-title>
   {{character.name}}
-  <button mat-icon-button (click)=saveCharacter()>
+  <button mat-icon-button 
+    (click)= "isFavorite() ? deleteFavorite() : saveCharacter() ">
     <mat-icon 
       aria-hidden="false" 
       [style.color] ="isFavorite() ? 'red' : ''"

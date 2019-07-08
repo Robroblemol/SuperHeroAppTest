@@ -46,7 +46,10 @@ export class CharacterComponent implements OnInit{
     
   }
   saveCharacter(){
-    console.log("try save");
-    this.favoritesSvc.saveFavoriteHero(this.character);
+    // console.log("try save");
+    return this.favoritesSvc.saveFavoriteHero(this.character);
+  }
+  deleteFavorite(){
+    return this.favoritesSvc.deleteFavorite(this.character);
   }
 }

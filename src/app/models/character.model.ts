@@ -1,6 +1,7 @@
 export interface Character {
     id: string;
     name: string;
+    idfv: string;
     powerstats: {};
     biography:{
         fullName: string,
@@ -11,4 +12,5 @@ export interface Character {
     work:{};
     connections:{};
     image:{};
+
 }
